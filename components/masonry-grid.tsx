@@ -129,12 +129,15 @@ export function MasonryGrid({ items, onItemClick }: MasonryGridProps) {
           <div className="relative overflow-hidden">
             <Image
               src={item.src || "/placeholder.svg"}
-              alt={item.title}
+              alt={item.title || "Portfolio image"}
               width={columnWidth}
               height={200}
+              priority={index < 6} // Prioritize first 6 images
               className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
               onLoad={handleImageLoad}
-              sizes={`${columnWidth}px`}
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkbHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R/HNmf9ni9T9NL9rq7KMN3dz3JZBt5/PcMtFd6IQVhNNLk="
               style={{
                 aspectRatio: "auto",
                 maxWidth: "100%",

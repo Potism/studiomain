@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import LazyVideo from "./lazy-video";
 import { Aperture, Camera, Video, Zap } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
   const buttonNew = (
@@ -8,9 +9,9 @@ export function Hero() {
       asChild
       className="rounded-2xl bg-white text-gray-700 px-8 py-4 hover:bg-gray-50 perspective-glow font-semibold text-lg border border-gray-200 hover:shadow-lg"
     >
-      <a href="/contact" rel="noopener noreferrer">
+      <Link href="/contact">
         Inizia il Tuo Progetto
-      </a>
+      </Link>
     </Button>
   );
 
@@ -54,10 +55,13 @@ export function Hero() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 items-center">
             {buttonNew}
             <Button
+              asChild
               variant="outline"
               className="rounded-2xl px-8 py-4 font-semibold text-lg border-2 border-white/20 hover:bg-white/5 bg-white/5 backdrop-blur-sm text-white hover:border-[#C6FF3A]/50"
             >
-              Visualizza Portfolio
+              <Link href="/gallery">
+                Visualizza Portfolio
+              </Link>
             </Button>
           </div>
 
