@@ -94,15 +94,10 @@ export function Hero() {
             })}
           </div>
 
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-4xl">
+          <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-3xl">
             {[
               { number: "500+", label: "Progetti Completati", icon: Camera },
               { number: "98%", label: "Clienti Soddisfatti", icon: Zap },
-              {
-                number: "50M+",
-                label: "Visualizzazioni Generate",
-                icon: Video,
-              },
               {
                 number: "24h",
                 label: "Tempo di Risposta Medio",

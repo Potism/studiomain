@@ -83,7 +83,6 @@ export default function AboutPage() {
   const teamStats = [
     { icon: Camera, number: "500+", label: "Progetti Completati" },
     { icon: Users, number: "98%", label: "Clienti Soddisfatti" },
-    { icon: Award, number: "50M+", label: "Visualizzazioni Generate" },
     { icon: Zap, number: "24h", label: "Tempo di Risposta Medio" },
   ];
 
@@ -232,7 +231,7 @@ export default function AboutPage() {
 
         {/* Stats Section */}
         <section className="container mx-auto px-4 py-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
             {teamStats.map((stat, index) => (
               <div key={index} className="text-center group">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 mb-4 group-hover:bg-[#C6FF3A]/10 transition-colors">
