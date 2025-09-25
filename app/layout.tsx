@@ -18,10 +18,68 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Perspective Studio | Professional Photography & Videography",
+  metadataBase: new URL('https://perspectivestudio.it'),
+  title: {
+    default: "Perspective Studio | Professional Photography & Videography",
+    template: "%s | Perspective Studio"
+  },
   description:
     "Perspective Studio specializes in professional photography and videography services. We create compelling visual content that tells your story and drives engagement across all platforms.",
-  generator: "v0.app",
+  keywords: [
+    "fotografia professionale",
+    "videografia",
+    "social media marketing", 
+    "contenuti visivi",
+    "branding",
+    "Italia",
+    "Perspective Studio",
+    "video commerciali",
+    "shooting fotografici"
+  ],
+  authors: [{ name: "Perspective Studio" }],
+  creator: "Perspective Studio",
+  publisher: "Perspective Studio",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'it_IT',
+    url: 'https://perspectivestudio.it',
+    siteName: 'Perspective Studio',
+    title: 'Perspective Studio | Professional Photography & Videography',
+    description: 'Professional photography and videography services in Italy. Creating compelling visual content for brands and businesses.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Perspective Studio - Professional Photography & Videography',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Perspective Studio | Professional Photography & Videography',
+    description: 'Professional photography and videography services in Italy.',
+    images: ['/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+  },
 }
 
 export default function RootLayout({
@@ -30,8 +88,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} antialiased dark`}>
+    <html lang="it" className={`${inter.variable} ${playfair.variable} antialiased dark`}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://perspectivestudio.it" />
         <link
           rel="preload"
           href="/fonts/Inter.woff2"

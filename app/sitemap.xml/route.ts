@@ -1,9 +1,11 @@
 const URLS = [
   { url: "/", priority: "1.0", changefreq: "weekly" },
-  { url: "/#pricing", priority: "0.9", changefreq: "weekly" },
-  { url: "/faq", priority: "0.8", changefreq: "monthly" },
+  { url: "/gallery", priority: "0.9", changefreq: "weekly" },
+  { url: "/contact", priority: "0.8", changefreq: "monthly" },
   { url: "/About", priority: "0.7", changefreq: "monthly" },
-  { url: "/revisions", priority: "0.6", changefreq: "monthly" },
+  { url: "/faq", priority: "0.6", changefreq: "monthly" },
+  { url: "/revisions", priority: "0.5", changefreq: "monthly" },
+  { url: "/t&c", priority: "0.3", changefreq: "yearly" },
 ]
 
 export async function GET(request: Request) {

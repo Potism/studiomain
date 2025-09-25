@@ -259,10 +259,13 @@ export function GalleryGrid() {
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <Image
                       src={item.src || "/placeholder.svg"}
-                      alt={item.title}
+                      alt={item.title || "Portfolio image"}
                       fill
+                      priority={index < 6} // Prioritize first 6 images
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                       sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkbHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R/HNmf9ni9T9NL9rq7KMN3dz3JZBt5/PcMtFd6IQVhNNLk="
                     />
 
                     {/* Video play overlay */}
@@ -492,7 +495,7 @@ export function GalleryGrid() {
             <div className="relative bg-black rounded-lg overflow-hidden shadow-2xl">
               <Image
                 src={selectedPhoto.original_file_url || selectedPhoto.src}
-                alt={selectedPhoto.title}
+                alt={selectedPhoto.title || "Portfolio image"}
                 width={1200}
                 height={800}
                 style={{
@@ -503,6 +506,8 @@ export function GalleryGrid() {
                 }}
                 className="object-contain"
                 priority
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkbHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R/HNmf9ni9T9NL9rq7KMN3dz3JZBt5/PcMtFd6IQVhNNLk="
               />
 
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">

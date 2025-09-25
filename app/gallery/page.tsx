@@ -1,11 +1,32 @@
 import { SiteHeader } from "@/components/site-header"
 import { GalleryGrid } from "@/components/gallery-grid"
 import { AppverseFooter } from "@/components/appverse-footer"
+import type { Metadata } from "next"
 
-export const metadata = {
+export const dynamic = "force-static"
+
+export const metadata: Metadata = {
   title: "Gallery | Perspective Studio - I Nostri Lavori",
   description:
     "Scopri i nostri progetti di social media marketing, fotografia e video. Portfolio completo dei lavori realizzati per i nostri clienti.",
+  keywords: "portfolio, fotografia, videografia, progetti, social media, marketing",
+  openGraph: {
+    title: "Gallery | Perspective Studio - I Nostri Lavori",
+    description: "Scopri i nostri progetti di social media marketing, fotografia e video.",
+    type: "website",
+    url: "https://perspectivestudio.it/gallery",
+    images: [
+      {
+        url: "/gallery-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Perspective Studio Portfolio Gallery",
+      },
+    ],
+  },
+  alternates: {
+    canonical: "https://perspectivestudio.it/gallery",
+  },
 }
 
 export default function GalleryPage() {
