@@ -111,10 +111,7 @@ export function AppverseFooter() {
                   <Mail className="h-4 w-4 text-muted-foreground" />
                   <span>info@perspectivestudio.it</span>
                 </li>
-                <li className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-muted-foreground" />
-                  <span>+39 123 456 7890</span>
-                </li>
+
                 <li className="flex items-center gap-2">
                   <Instagram className="h-4 w-4 text-muted-foreground" />
                   <span>@d.perspective.studio</span>
