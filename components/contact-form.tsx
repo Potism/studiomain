@@ -327,13 +327,6 @@ export function ContactForm() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-center gap-3 text-foreground">
-              <Phone className="h-5 w-5 text-primary" />
-              <div>
-                <p className="font-medium">Telefono</p>
-                <p className="text-sm">+39 123 456 7890</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3 text-foreground">
               <Mail className="h-5 w-5 text-primary" />
               <div>
                 <p className="font-medium">Email</p>
