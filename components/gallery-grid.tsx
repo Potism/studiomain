@@ -61,12 +61,17 @@ export function GalleryGrid() {
   // Detect mobile device
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+      setIsMobile(
+        window.innerWidth < 768 ||
+          /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+      );
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   // Handle video modal state changes
@@ -381,7 +386,9 @@ export function GalleryGrid() {
           onClick={() => setSelectedVideo(null)}
         >
           <div
-            className={`relative w-full mx-4 ${isMobile ? 'max-w-sm' : 'max-w-4xl'}`}
+            className={`relative w-full mx-4 ${
+              isMobile ? "max-w-sm" : "max-w-4xl"
+            }`}
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -401,14 +408,16 @@ export function GalleryGrid() {
                 preload="metadata"
                 webkit-playsinline="true"
                 x5-playsinline="true"
-                className={`w-full h-auto ${isMobile ? 'max-h-[60vh]' : 'max-h-[80vh]'}`}
+                className={`w-full h-auto ${
+                  isMobile ? "max-h-[60vh]" : "max-h-[80vh]"
+                }`}
                 poster={selectedVideo.thumbnail_url || selectedVideo.src}
                 onError={(e) => {
                   console.log("Video error:", e);
                   setVideoError(true);
                   // Fallback: remove autoplay and let user manually start
                   const video = e.target as HTMLVideoElement;
-                  video.removeAttribute('autoplay');
+                  video.removeAttribute("autoplay");
                 }}
                 onLoadStart={() => setVideoError(false)}
                 onCanPlay={(e) => {
@@ -417,7 +426,9 @@ export function GalleryGrid() {
                     const video = e.target as HTMLVideoElement;
                     video.muted = true; // Ensure muted for mobile autoplay
                     video.play().catch(() => {
-                      console.log("Mobile autoplay blocked, user interaction required");
+                      console.log(
+                        "Mobile autoplay blocked, user interaction required"
+                      );
                     });
                   }
                 }}
@@ -442,14 +453,16 @@ export function GalleryGrid() {
                 {videoError && (
                   <div className="mt-4 p-3 bg-red-900/20 border border-red-700/30 rounded-lg">
                     <p className="text-red-300 text-sm">
-                      ⚠️ Video failed to load. Please check your connection and try again.
+                      ⚠️ Video failed to load. Please check your connection and
+                      try again.
                     </p>
                   </div>
                 )}
                 {isMobile && !videoError && (
                   <div className="mt-4 p-3 bg-blue-900/20 border border-blue-700/30 rounded-lg">
                     <p className="text-blue-300 text-sm">
-                      📱 On mobile devices, tap the play button if the video doesn't start automatically.
+                      📱 On mobile devices, tap the play button if the video
+                      doesn't start automatically.
                     </p>
                   </div>
                 )}
